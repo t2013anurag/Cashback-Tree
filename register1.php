@@ -1,0 +1,20 @@
+<?php
+session_start();
+$con=mysqli_connect("localhost","root","","shoppingsense");
+$email=$_SESSION["email"];
+$uname=$_SESSION["uname"];
+$dname=$_SESSION["dname"];
+$pwd=$_SESSION["pwd"];
+$title=$_SESSION["title"];
+$fname=$_SESSION["fname"];
+$add1=$_SESSION["add1"];
+$add2=$_SESSION["add2"];
+$zip=$_SESSION["zip"];
+$city=$_SESSION["city"];
+$state=$_SESSION["state"];
+$country=$_SESSION["country"];
+$phone=$_SESSION["phone"];
+$exp="insert into users values ('$uname','$dname','$pwd','$title','$fname','$add1','$add2','$zip','$city','$state','$country','$phone','$email')";
+$res=mysqli_query($con,$exp);
+mysqli_close($con);
+?>
